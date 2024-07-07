@@ -1,0 +1,52 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scrollbar-gutter: stable;
+	font-size: 16px;
+}
+
+body {
+	font-family: var(--text-regular);
+}
+
+h1,
+h2,
+h3,
+h4,
+th {
+	font-weight: 500;
+}
+
+a {
+	display: block;
+	text-decoration: none;
+}
+
+button {
+	background: transparent;
+	border: 0;
+}
+
+:global {
+	.container {
+		width: 100%;
+		max-width: calc(1170px + 2rem);
+		margin: auto;
+		padding: 0 1rem;
+	}
+
+	.icon {
+		stroke: var(--gray-900);
+		stroke-width: 1.5;
+
+		&.filled {
+			fill: var(--gray-900);
+			stroke: none;
+			stroke-width: 0;
+		}
+	}
+}

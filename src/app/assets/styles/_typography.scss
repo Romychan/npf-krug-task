@@ -1,0 +1,45 @@
+@mixin text-xs {
+	font-family: var(--text-regular);
+	font-size: 0.75rem;
+	line-height: 1.25rem;
+	letter-spacing: 0.0075rem;
+}
+
+@mixin text-sm {
+	font-family: var(--text-regular);
+	font-size: 0.875rem;
+	line-height: 1.38rem;
+	letter-spacing: 0.0088rem;
+}
+
+@mixin text-md {
+	font-family: var(--text-regular);
+	font-size: 1rem;
+	line-height: 1.62rem;
+	letter-spacing: 0.01rem;
+}
+
+@mixin text-lg {
+	font-family: var(--text-regular);
+	font-size: 1.125rem;
+	line-height: 1.88rem;
+	letter-spacing: 0.0112rem;
+}
+
+@mixin text-xl {
+	font-family: var(--text-regular);
+	font-size: 1.3125rem;
+	line-height: 1.875rem;
+	letter-spacing: 0.0112rem;
+}
+
+@mixin text-2xl {
+	font-family: var(--text-regular);
+	font-size: 1.5rem;
+	line-height: 2rem;
+	letter-spacing: 0.0112rem;
+}
+
+@mixin text-medium {
+	font-family: var(--text-medium);
+}

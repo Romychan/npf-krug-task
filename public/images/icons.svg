@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/symbol" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="close">
+    <path d="M18 6L6 18" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 6L18 18" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="none" id="chevron">
+    <path d="M6 9L12 15L18 9" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+	<symbol viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="trash">
+    <path d="M3 6H5H21" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+	<symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="success-filled">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM17.2576 9.53033C17.5505 9.23744 17.5505 8.76256 17.2576 8.46967C16.9647 8.17678 16.4898 8.17678 16.1969 8.46967L10.7273 13.9393L8.53033 11.7424C8.23744 11.4495 7.76256 11.4495 7.46967 11.7424C7.17678 12.0353 7.17678 12.5102 7.46967 12.8031L10.1969 15.5303C10.4898 15.8232 10.9647 15.8232 11.2576 15.5303L17.2576 9.53033Z" />
+  </symbol>
+
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="error-filled">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M2 8C2 4.68628 4.68629 2 8 2H16C19.3137 2 22 4.68628 22 8V16C22 19.3137 19.3137 22 16 22H8C4.68629 22 2 19.3137 2 16V8ZM15.5303 8.46967C15.8232 8.76257 15.8232 9.23743 15.5303 9.53033L13.0607 12L15.5303 14.4697C15.8232 14.7626 15.8232 15.2374 15.5303 15.5303C15.2374 15.8232 14.7626 15.8232 14.4697 15.5303L12 13.0607L9.53033 15.5303C9.23743 15.8232 8.76257 15.8232 8.46967 15.5303C8.17677 15.2374 8.17677 14.7626 8.46967 14.4697L10.9393 12L8.46967 9.53033C8.17677 9.23743 8.17677 8.76257 8.46967 8.46967C8.76257 8.17679 9.23743 8.17679 9.53033 8.46967L12 10.9393L14.4697 8.46967C14.7626 8.17679 15.2374 8.17679 15.5303 8.46967Z" />
+  </symbol>
+
+  <symbol viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="warning-filled">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.46854 3.96154C10.5936 2.01282 13.4064 2.01282 14.5315 3.96154L22.1258 17.1154C23.2509 19.0641 21.8446 21.5 19.5944 21.5H4.40562C2.15544 21.5 0.749069 19.0641 1.87416 17.1154L9.46854 3.96154ZM11.995 7.75C12.4092 7.75 12.745 8.08579 12.745 8.5V13.5C12.745 13.9142 12.4092 14.25 11.995 14.25C11.5808 14.25 11.245 13.9142 11.245 13.5V8.5C11.245 8.08579 11.5808 7.75 11.995 7.75ZM11.995 15.5C11.4427 15.5 10.995 15.9477 10.995 16.5C10.995 17.0523 11.4427 17.5 11.995 17.5H12.005C12.5573 17.5 13.005 17.0523 13.005 16.5C13.005 15.9477 12.5573 15.5 12.005 15.5H11.995Z" />
+  </symbol>
+</svg>

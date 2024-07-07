@@ -1,0 +1,32 @@
+@mixin font($font_name, $file_name) {
+	@font-face {
+		font-family: $font_name;
+		font-display: swap;
+		src:
+			url('../fonts/#{$file_name}.woff2') format('woff2'),
+			url('../fonts/#{$file_name}.woff') format('woff');
+	}
+}
+
+@mixin scrollbar() {
+	&::-webkit-scrollbar {
+		width: 10px;
+		border-radius: var(--radius-default);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: transparent;
+		border: 2px solid var(--background);
+		border-radius: var(--radius-default);
+	}
+
+	&:hover {
+		&::-webkit-scrollbar-thumb {
+			background: var(--gray-100);
+
+			&:hover {
+				background: var(--gray-300);
+			}
+		}
+	}
+}

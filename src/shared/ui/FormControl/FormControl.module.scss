@@ -1,0 +1,80 @@
+@import '~/src/app/assets/styles/typography';
+
+.container {
+	display: flex;
+	gap: 0.125rem;
+	width: 100%;
+}
+
+.label {
+	@include text-xs;
+
+	display: block;
+
+	& .required {
+		color: var(--red-500);
+	}
+}
+
+.content {
+	position: relative;
+}
+
+.top {
+	flex-direction: column;
+}
+
+.left,
+.right {
+	align-items: center;
+
+	& .label {
+		width: 30%;
+	}
+
+	& .content {
+		width: 100%;
+	}
+}
+
+.right {
+	flex-direction: row-reverse;
+
+	& .label {
+		text-align: right;
+	}
+}
+
+.left {
+	flex-direction: row;
+}
+
+.primary {
+	& .label {
+		@include text-medium;
+
+		color: var(--gray-900);
+	}
+}
+
+.secondary {
+	& .label {
+		color: var(--gray-400);
+	}
+}
+
+.error {
+	@include text-xs;
+
+	position: absolute;
+	bottom: -1.25rem;
+	left: 0;
+
+	overflow: hidden;
+
+	max-width: 100%;
+
+	color: var(--red-500);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}

@@ -1,0 +1,33 @@
+@import '~/src/app/assets/styles/typography';
+
+.container {
+	padding: 5rem 0 6rem;
+}
+
+.inner {
+	display: flex;
+	flex-direction: column;
+}
+
+.header {
+	position: sticky;
+	z-index: 3;
+	top: 0;
+
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+
+	margin-bottom: 1rem;
+	padding: 1rem 0;
+
+	background: var(--background);
+}
+
+.title {
+	@include text-lg;
+	@include text-medium;
+
+	color: var(--gray-900);
+}

@@ -1,0 +1,183 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ToastProvider > should match snapshot 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div />
+    <div
+      class="_container_f24d02 _top-right_f24d02"
+      data-testid="toast-container"
+    >
+      <div
+        class="_toast_ebd400 _bordered_ebd400 _success_ebd400"
+        data-testid="toast"
+      >
+        <div
+          class="_container_ebd400"
+        >
+          <div
+            class="_content_ebd400"
+          >
+            <svg
+              class="icon icon-success-filled _status_ebd400 filled"
+              data-testid="icon"
+              height="24"
+              width="24"
+            >
+              <use
+                xlink:href="/images/icons.svg#success-filled"
+              />
+            </svg>
+            <div
+              class="_information_ebd400"
+            >
+              <span
+                class="_title_ebd400"
+              >
+                Toast
+              </span>
+              <span
+                class="_text_ebd400"
+              />
+            </div>
+          </div>
+          <button
+            class="_button_0302f3 _close_ebd400 _light_0302f3 _primary_0302f3 _xs_0302f3 _icon_0302f3"
+            data-testid="toast-close"
+            type="button"
+          >
+            <svg
+              class="icon icon-close"
+              data-testid="icon"
+              height="16"
+              width="16"
+            >
+              <use
+                xlink:href="/images/icons.svg#close"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="_bar_ebd400"
+          style="animation-duration: 2000ms;"
+        />
+        <div
+          class="_background_ebd400"
+        />
+      </div>
+      <div
+        class="_toast_ebd400 _bordered_ebd400 _error_ebd400"
+        data-testid="toast"
+      >
+        <div
+          class="_container_ebd400"
+        >
+          <div
+            class="_content_ebd400"
+          >
+            <svg
+              class="icon icon-error-filled _status_ebd400 filled"
+              data-testid="icon"
+              height="24"
+              width="24"
+            >
+              <use
+                xlink:href="/images/icons.svg#error-filled"
+              />
+            </svg>
+            <div
+              class="_information_ebd400"
+            >
+              <span
+                class="_title_ebd400"
+              >
+                Toast
+              </span>
+              <span
+                class="_text_ebd400"
+              />
+            </div>
+          </div>
+          <button
+            class="_button_0302f3 _close_ebd400 _light_0302f3 _primary_0302f3 _xs_0302f3 _icon_0302f3"
+            data-testid="toast-close"
+            type="button"
+          >
+            <svg
+              class="icon icon-close"
+              data-testid="icon"
+              height="16"
+              width="16"
+            >
+              <use
+                xlink:href="/images/icons.svg#close"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="_bar_ebd400"
+          style="animation-duration: 2000ms;"
+        />
+        <div
+          class="_background_ebd400"
+        />
+      </div>
+    </div>
+  </body>,
+  "container": <div />,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

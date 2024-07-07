@@ -1,0 +1,42 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"skipLibCheck": true,
+
+		/* Bundler mode */
+		"moduleResolution": "node",
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": false,
+		"jsx": "react-jsx",
+
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+
+		/* Alias */
+		"baseUrl": "src",
+		"paths": {
+			"~/app/*": ["app/*"],
+			"~/processes/*": ["processes/*"],
+			"~/pages/*": ["pages/*"],
+			"~/widgets/*": ["widgets/*"],
+			"~/features/*": ["features/*"],
+			"~/entities/*": ["entities/*"],
+			"~/shared/*": ["shared/*"]
+		}
+	},
+	"include": ["src", "types"],
+	"ts-node": {
+		"compilerOptions": {
+			"module": "CommonJS"
+		}
+	}
+}

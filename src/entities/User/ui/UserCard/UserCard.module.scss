@@ -1,0 +1,32 @@
+@import '~/src/app/assets/styles/typography';
+
+.profile {
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	width: 100%;
+}
+
+.information {
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+}
+
+.name,
+.username {
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.name {
+	@include text-sm;
+
+	color: var(--gray-900);
+}
+
+.username {
+	@include text-xs;
+
+	color: var(--gray-600);
+}

@@ -1,0 +1,111 @@
+name: Quality
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  linters:
+    name: Linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Cache node-modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint code
+        run: npm run lint
+
+  unit-test:
+    name: Unit Test
+    runs-on: ubuntu-latest
+    needs: linters
+    env:
+      BASE_API_URL: ${{ vars.SERVER_API }}
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Cache node-modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run unit tests
+        run: npm run test:unit
+
+  e2e-test:
+    name: End-to-End Test
+    runs-on: ubuntu-latest
+    needs: linters
+    env:
+      BASE_API_URL: ${{ vars.SERVER_API }}
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Cache node-modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run End-to-End tests
+        run: npm run test:e2e
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: [linters, unit-test, e2e-test]
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Cache node-modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+  storybook:
+    name: Storybook
+    runs-on: ubuntu-latest
+    needs: [linters, unit-test, e2e-test, build]
+    env:
+      BASE_API_URL: ${{ vars.SERVER_API }}
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+
+      - name: Cache node-modules
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: node-modules-${{ hashFiles('**/package-lock.json') }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run storybook:build

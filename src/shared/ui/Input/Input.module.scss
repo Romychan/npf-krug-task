@@ -1,0 +1,160 @@
+@use 'sass:color';
+@import '~/src/app/assets/styles/typography';
+
+.input {
+	/* Color */
+	--color-main: var(--color-hue) var(--color-saturation) var(--color-lightness);
+
+	/* Default */
+	--background-color: var(--color-main);
+	--background-alpha: 100%;
+	--text-color: var(--color-main);
+	--border-color: var(--color-main);
+	--border-alpha: 10%;
+	--shadow-color: none;
+
+	/* Hover */
+	--background-hover-color: var(--color-main);
+	--background-hover-alpha: 85%;
+	--border-hover-color: var(--color-main);
+	--border-hover-alpha: 10%;
+	--shadow-color-hover: hsl(var(--color-main) / 5%);
+
+	/* Focus */
+	--background-focus-color: var(--color-main);
+	--background-focus-alpha: 85%;
+	--border-focus-color: var(--color-main);
+	--border-focus-alpha: 22%;
+	--shadow-color-focus: hsl(var(--color-main) / 5%);
+
+	/* Size */
+	--padding-size: calc(0.375rem - 2px) 0.75rem;
+	--border-radius: var(--radius-default);
+	--border-width: 1px;
+	--border-style: solid;
+
+	width: 100%;
+	padding: var(--padding-size);
+
+	color: hsl(var(--text-color));
+
+	background-color: var(--background-color-name, hsl(var(--background-color) / var(--background-alpha)));
+	border-color: var(--border-color-name, hsl(var(--border-color) / var(--border-alpha)));
+	border-style: var(--border-style);
+	border-width: var(--border-width);
+	border-radius: var(--border-radius);
+	outline: none;
+	box-shadow: 0 0 0 2px var(--shadow-color);
+
+	transition: 0.2s;
+
+	&::placeholder {
+		color: hsl(var(--color-main) / 50%);
+	}
+
+	&::-webkit-calendar-picker-indicator {
+		cursor: pointer;
+
+		width: 18px;
+		height: 18px;
+		margin: 0;
+		padding: 0;
+	}
+
+	&:hover {
+		--background-alpha: var(--background-hover-alpha);
+		--background-color: var(--background-hover-color);
+		--border-color: var(--border-hover-color);
+		--border-alpha: var(--border-hover-alpha);
+		--shadow-color: var(--shadow-color-hover);
+	}
+
+	&:focus {
+		--background-alpha: var(--background-focus-alpha);
+		--background-color: var(--background-focus-color);
+		--border-color: var(--border-focus-color);
+		--border-alpha: var(--border-focus-alpha) !important;
+		--shadow-color: var(--shadow-color-focus);
+	}
+}
+
+.bordered,
+.filled,
+.unfilled {
+	$color: #040303;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+}
+
+.bordered {
+	--background-color-name: transparent;
+}
+
+.filled {
+	--background-alpha: 4%;
+	--background-hover-alpha: 8%;
+	--background-focus-color: transparent;
+	--border-alpha: 0% !important;
+	--border-hover-alpha: 0%;
+	--shadow-color-hover: none;
+}
+
+.unfilled {
+	--background-alpha: 0%;
+	--background-hover-alpha: 8%;
+	--background-focus-color: transparent;
+	--border-alpha: 0% !important;
+	--border-hover-alpha: 0%;
+	--shadow-color-hover: none;
+}
+
+.unstyled {
+	--padding-size: 0;
+	--border-width: 0;
+	--border-style: none;
+	--background-color-name: transparent;
+	--border-color-name: transparent;
+	--shadow-color: none;
+	--shadow-color-hover: none;
+	--shadow-color-focus: none;
+}
+
+.error {
+	$color: #ff253f;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+	--border-alpha: 50%;
+	--border-hover-alpha: 50%;
+	--border-focus-alpha: 50%;
+}
+
+/** Size */
+
+.lg {
+	@include text-lg;
+}
+
+.md {
+	@include text-md;
+}
+
+.sm {
+	@include text-sm;
+}
+
+.xs {
+	--padding-size: 0.25rem 0.75rem;
+
+	@include text-xs;
+}
+
+.xxs {
+	--padding-size: 0.125rem 0.75rem;
+	--border-radius: calc(var(--radius-default) / 2);
+
+	@include text-xs;
+}

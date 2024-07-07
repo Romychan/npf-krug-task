@@ -1,0 +1,230 @@
+@use 'sass:color';
+
+@import '~/src/app/assets/styles/typography';
+
+.button {
+	/* Color */
+	--color-main: var(--color-hue) var(--color-saturation) var(--color-lightness);
+
+	/* Default */
+	--background-color: var(--color-main);
+	--background-alpha: 100%;
+	--text-color: 0 0% 100%;
+	--text-alpha: 100%;
+	--border-color: var(--color-main);
+
+	/* Hover */
+	--background-hover-color: var(--color-main);
+	--background-hover-alpha: 85%;
+	--text-hover-color: 0 0% 100%;
+	--text-hover-alpha: 100%;
+	--border-hover-color: var(--color-main);
+
+	/* Size */
+	--padding-size: 0.31rem 0.75rem;
+	--gap-size: 0.25rem;
+	--border-radius: var(--radius-default);
+	--button-size: auto;
+
+	cursor: pointer;
+
+	display: flex;
+	gap: var(--gap-size);
+	align-items: center;
+	justify-content: center;
+
+	padding: var(--padding-size);
+
+	color: var(--text-color-name, hsl(var(--text-color) / var(--text-alpha)));
+
+	background-color: var(--background-color-name, hsl(var(--background-color) / var(--background-alpha)));
+	border-color: hsl(var(--border-color));
+	border-style: var(--border-style);
+	border-width: var(--border-width);
+	border-radius: var(--border-radius);
+
+	transition: 0.2s;
+
+	& svg {
+		width: var(--icon-size);
+		height: var(--icon-size);
+
+		fill: hsl(var(--text-color) / var(--text-alpha));
+		stroke: hsl(var(--text-color) / var(--text-alpha));
+
+		transition: 0.2s;
+	}
+
+	&:hover {
+		--background-alpha: var(--background-hover-alpha);
+		--background-color: var(--background-hover-color);
+		--border-color: var(--border-hover-color);
+		--text-color: var(--text-hover-color);
+		--text-alpha: var(--text-hover-alpha);
+	}
+
+	&:active {
+		transform: scale(0.98);
+	}
+
+	&[disabled] {
+		pointer-events: none;
+		cursor: not-allowed;
+		user-select: none;
+		opacity: 0.75;
+	}
+}
+
+/** Color */
+
+.default {
+	$color: #e4e4e4;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+	--text-color-name: #040303;
+	--text-hover-color: #040303;
+}
+
+.primary {
+	$color: #040303;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+}
+
+.success {
+	$color: #32af6a;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+}
+
+.danger {
+	$color: #ff4158;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+}
+
+.warning {
+	$color: #f2bf2e;
+
+	--color-hue: #{color.hue($color)};
+	--color-saturation: #{color.saturation($color)};
+	--color-lightness: #{color.lightness($color)};
+}
+
+/* Variant */
+
+.bordered {
+	--border-width: 1px;
+	--border-style: solid;
+	--border-color: var(--color-main);
+	--background-color-name: transparent;
+	--text-color: var(--color-main);
+	--text-hover-color: var(--color-main);
+}
+
+.ghost {
+	--border-width: 1px;
+	--border-style: solid;
+	--border-color: var(--color-main);
+	--background-color: transparent;
+	--text-color: var(--color-main);
+}
+
+.light {
+	--background-alpha: 0%;
+	--background-color: var(--color-main);
+	--text-color: var(--color-main);
+	--text-alpha: 65%;
+	--background-hover-alpha: 6%;
+	--background-hover-color: var(--color-main);
+	--text-hover-color: var(--color-main);
+}
+
+.flat {
+	--background-alpha: 6%;
+	--background-color: var(--color-main);
+	--text-color: var(--color-main);
+	--background-hover-alpha: 10%;
+	--background-hover-color: var(--color-main);
+	--text-hover-color: var(--color-main);
+}
+
+.link {
+	--background-color: transparent;
+	--text-alpha: 75%;
+	--text-color: var(--color-main);
+	--background-hover-color: transparent;
+	--text-hover-alpha: 100%;
+	--text-hover-color: var(--color-main);
+	--padding-size: 0 !important;
+}
+
+/** Size */
+
+.lg {
+	--icon-size: 2.5rem;
+	@include text-lg;
+	@include text-medium;
+
+	&.icon {
+		--button-size: 1.75rem;
+	}
+}
+
+.md {
+	--icon-size: 1.5rem;
+	@include text-md;
+	@include text-medium;
+
+	&.icon {
+		--button-size: 2.25rem;
+	}
+}
+
+.sm {
+	--icon-size: 1.125rem;
+	@include text-sm;
+	@include text-medium;
+
+	&.icon {
+		--button-size: 2rem;
+	}
+}
+
+.xs {
+	--icon-size: 1rem;
+	--padding-size: 0.25rem 0.75rem;
+	--border-radius: calc(var(--radius-default) / 2);
+
+	@include text-xs;
+	@include text-medium;
+
+	&.icon {
+		--button-size: 1.75rem;
+	}
+}
+
+.xxs {
+	--padding-size: 0.125rem 0.75rem;
+	--border-radius: calc(var(--radius-default) / 2);
+
+	@include text-xs;
+	@include text-medium;
+}
+
+/* Other */
+
+.icon {
+	--padding-size: 0;
+
+	width: var(--button-size);
+	height: var(--button-size);
+}

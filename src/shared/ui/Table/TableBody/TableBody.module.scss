@@ -1,0 +1,41 @@
+@import '~/src/app/assets/styles/typography';
+
+.row {
+	background-color: var(--background);
+	border-bottom: 1px solid var(--gray-25);
+
+	&.clickable {
+		cursor: pointer;
+
+		&:hover {
+			background-color: var(--gray-25);
+		}
+	}
+}
+
+.placeholder {
+	@include text-xs;
+	@include text-medium;
+
+	align-items: center;
+	height: 8rem;
+	color: var(--gray-900);
+	text-align: center;
+}
+
+.loader {
+	margin: auto;
+}
+
+.cell {
+	@include text-sm;
+
+	overflow: hidden;
+
+	max-width: 100px;
+	padding: 1rem;
+
+	color: var(--gray-900);
+	text-overflow: ellipsis;
+	white-space: normal;
+}

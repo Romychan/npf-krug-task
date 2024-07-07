@@ -1,0 +1,22 @@
+.loader {
+	display: block;
+
+	aspect-ratio: 1/1;
+	width: 2rem;
+
+	border: 4px solid var(--gray-50);
+	border-bottom-color: var(--gray-900);
+	border-radius: 120px;
+
+	animation: circle 1s linear infinite;
+}
+
+@keyframes circle {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}

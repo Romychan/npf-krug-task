@@ -1,0 +1,105 @@
+@import '~/src/app/assets/styles/typography';
+
+.cell {
+	@include text-xs;
+	@include text-medium;
+
+	cursor: default;
+
+	position: relative;
+
+	padding: 0.5rem 1rem;
+
+	color: var(--gray-600);
+	text-align: left;
+	white-space: nowrap;
+
+	transition: color 0.2s;
+
+	&:first-child {
+		border-top-left-radius: var(--radius-default);
+	}
+
+	&:last-child {
+		border-top-right-radius: var(--radius-default);
+	}
+}
+
+.icon {
+	transform: rotate(180deg);
+
+	margin-left: 0.25rem;
+
+	vertical-align: sub;
+
+	opacity: 0;
+
+	stroke: var(--gray-900);
+
+	transition: 0.2s;
+}
+
+.active {
+	color: var(--gray-900);
+
+	& .icon {
+		opacity: 1;
+		stroke: var(--gray-900);
+	}
+}
+
+.desc {
+	& .icon {
+		transform: rotate(0deg);
+	}
+}
+
+.isSortable {
+	cursor: pointer;
+
+	&:hover {
+		color: var(--gray-900);
+
+		& .icon {
+			opacity: 1;
+		}
+	}
+}
+
+.backdrop {
+	cursor: col-resize;
+	user-select: none;
+
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+}
+
+.resizer {
+	cursor: col-resize;
+
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+
+	display: none;
+
+	width: 5px;
+	height: 100%;
+
+	transition: 0.2s;
+
+	&.active {
+		display: block;
+	}
+
+	&:hover,
+	&:active {
+		background: var(--gray-300);
+	}
+}
