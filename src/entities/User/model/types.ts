@@ -1,5 +1,3 @@
-import { Action } from 'redux';
-
 import { CreateUserRequest, DeleteUserRequest, UserResponse, UserResponseError } from '../api/types';
 
 /** Base interface for user */
@@ -41,53 +39,53 @@ export enum UserActionTypes {
 }
 
 /** Type of action to request users */
-export interface FetchUsersRequestAction extends Action<UserActionTypes.FETCH_USERS_REQUEST> {
+export interface FetchUsersRequestAction {
 	type: UserActionTypes.FETCH_USERS_REQUEST;
 	payload: UserQueryParams;
 }
 
 /** Type of action for a successful user request */
-export interface FetchUsersSuccessAction extends Action {
+export interface FetchUsersSuccessAction {
 	type: UserActionTypes.FETCH_USERS_SUCCESS;
 	payload: UserResponse;
 }
 
 /** Type of action to request users with an error */
-export interface FetchUsersErrorAction extends Action {
+export interface FetchUsersErrorAction {
 	type: UserActionTypes.FETCH_USERS_ERROR;
 	payload: UserResponseError;
 }
 
 /** Type of action to create user */
-export interface CreateUserRequestAction extends Action {
+export interface CreateUserRequestAction {
 	type: UserActionTypes.CREATE_USER_REQUEST;
 	payload: CreateUserRequest;
 }
 
 /** Type of action to successfully create a user */
-export interface CreateUserSuccessAction extends Action {
+export interface CreateUserSuccessAction {
 	type: UserActionTypes.CREATE_USER_SUCCESS;
 }
 
 /** Type of action to create user with an error */
-export interface CreateUserErrorAction extends Action {
+export interface CreateUserErrorAction {
 	type: UserActionTypes.CREATE_USER_ERROR;
 	payload: UserResponseError;
 }
 
 /** Type of action to delete user */
-export interface DeleteUserRequestAction extends Action {
+export interface DeleteUserRequestAction {
 	type: UserActionTypes.DELETE_USER_REQUEST;
 	payload: DeleteUserRequest;
 }
 
 /** Type of action to successfully delete a user */
-export interface DeleteUserSuccessAction extends Action {
+export interface DeleteUserSuccessAction {
 	type: UserActionTypes.DELETE_USER_SUCCESS;
 }
 
 /** Type of action to delete user with an error */
-export interface DeleteUserErrorAction extends Action {
+export interface DeleteUserErrorAction {
 	type: UserActionTypes.DELETE_USER_ERROR;
 	payload: UserResponseError;
 }

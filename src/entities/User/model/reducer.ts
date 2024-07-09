@@ -1,3 +1,5 @@
+import { Reducer } from '@reduxjs/toolkit';
+
 import { LIMIT_USERS } from './constants';
 import { UserActionTypes, UserActions, UserState } from './types';
 
@@ -18,7 +20,7 @@ const initialState: UserState = {
  *
  * @returns Updated state
  */
-export const userReducer = (state = initialState, action: UserActions): UserState => {
+export const userReducer: Reducer<UserState, UserActions> = (state = initialState, action) => {
 	switch (action.type) {
 		case UserActionTypes.FETCH_USERS_REQUEST:
 			return {

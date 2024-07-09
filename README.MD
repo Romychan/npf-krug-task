@@ -45,7 +45,7 @@
 - [Webpack](https://webpack.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [React](https://react.dev/)
-- [Redux](https://redux.js.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 - [Redux-Saga](https://redux-saga.js.org/)
 
 ### Тестирование
