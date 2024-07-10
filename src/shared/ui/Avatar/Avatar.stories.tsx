@@ -4,8 +4,6 @@ import { withGapDecorator } from '../../lib/storybook';
 
 import { Avatar } from './Avatar';
 
-console.log(withGapDecorator);
-
 const meta: Meta<typeof Avatar> = {
 	title: 'UI/Avatar',
 	component: Avatar,

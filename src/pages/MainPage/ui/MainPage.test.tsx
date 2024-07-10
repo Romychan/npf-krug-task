@@ -52,6 +52,27 @@ describe('MainPage', () => {
 			await waitFor(() => expect(userRowElement).not.toBeInTheDocument());
 		});
 
+		it('should add a user correctly after deleting all users', async () => {
+			const loadMoreUser = await screen.findByTestId('load-more-users');
+			fireEvent.click(loadMoreUser);
+
+			await waitFor(() => expect(screen.getAllByTestId('delete-user')).toHaveLength(15));
+
+			screen.getAllByTestId('delete-user').forEach((button) => fireEvent.click(button));
+
+			expect(await screen.findByTestId('table-body-empty')).toBeInTheDocument();
+
+			const buttonElement = screen.getByTestId('drawer-add-user');
+			fireEvent.click(buttonElement);
+			fillFormInputs();
+
+			fireEvent.submit(screen.getByTestId('add-user'));
+
+			const userRowElement = await screen.findAllByTestId('table-body-row');
+
+			expect(userRowElement).toHaveLength(1);
+		});
+
 		it('should match snapshot', async () => {
 			await waitForElementToBeRemoved(screen.getByTestId('loader'));
 			expect(container).toMatchSnapshot();

@@ -54,7 +54,7 @@ export const userHandlers = [
 
 		const newUser = {
 			...body,
-			id: users[0].id + 1,
+			id: users[0] ? users[0].id + 1 : 1,
 		};
 
 		const user = database.users.create(newUser);

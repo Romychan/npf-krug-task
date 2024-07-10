@@ -11,6 +11,9 @@ const deleteUsers = (numberOfUsersToDelete: number) => {
 	deleteUsers(numberOfUsersToDelete - 1);
 };
 
+const COUNT_ALL_USERS = 16;
+const COUNT_LIMIT_USERS = 10;
+
 describe('User table', () => {
 	describe('Displays user data', () => {
 		it('should display loading state', () => {
@@ -33,7 +36,7 @@ describe('User table', () => {
 
 			cy.findByTestId('table-body-empty').should('not.exist');
 			cy.findByTestId('loader').should('not.exist');
-			cy.findAllByTestId('table-body-row').should('have.length', 10);
+			cy.findAllByTestId('table-body-row').should('have.length', COUNT_LIMIT_USERS);
 		});
 
 		it('should display empty state', () => {
@@ -56,14 +59,32 @@ describe('User table', () => {
 			cy.findByTestId('toast').should('be.visible');
 		});
 
+		it('should add a user correctly after deleting all users', () => {
+			cy.findByTestId('load-more-users').should('be.visible');
+			cy.findByTestId('table-body-empty').should('not.exist');
+
+			deleteUsers(COUNT_ALL_USERS);
+
+			cy.findByTestId('table-body-empty').should('be.visible');
+			cy.findByTestId('drawer-add-user').click();
+			cy.fillForm([
+				{ label: /^name/i, value: 'John Doe' },
+				{ label: /^username/i, value: 'cypress' },
+				{ label: /^email/i, value: 'john.doe@test.com' },
+			]);
+			cy.findByTestId('add-user').click();
+
+			cy.findAllByTestId('table-body-row').should('have.length', 1);
+		});
+
 		it('should hide load more button after deleting users', () => {
 			cy.findByTestId('load-more-users').should('be.visible');
-			cy.findAllByTestId('table-body-row').should('have.length', 10);
+			cy.findAllByTestId('table-body-row').should('have.length', COUNT_LIMIT_USERS);
 
-			deleteUsers(10);
+			deleteUsers(COUNT_LIMIT_USERS);
 
 			cy.findByTestId('load-more-users').should('not.exist');
-			cy.findAllByTestId('table-body-row').should('have.length', 6);
+			cy.findAllByTestId('table-body-row').should('have.length', COUNT_ALL_USERS - COUNT_LIMIT_USERS);
 		});
 	});
 
@@ -73,9 +94,9 @@ describe('User table', () => {
 		});
 
 		it('should load more data', () => {
-			cy.findAllByTestId('table-body-row').should('have.length', 10);
+			cy.findAllByTestId('table-body-row').should('have.length', COUNT_LIMIT_USERS);
 			cy.findByTestId('load-more-users').click();
-			cy.findAllByTestId('table-body-row').should('have.length', 16);
+			cy.findAllByTestId('table-body-row').should('have.length', COUNT_ALL_USERS);
 		});
 	});
 });
